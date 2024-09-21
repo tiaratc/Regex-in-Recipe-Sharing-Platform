@@ -1,10 +1,8 @@
 import re
-
 def validasi(ingredient):
     # pattern = r'^\d+(\s\/\s\d+)?\s*(kg|g|ml|l|cups|tablespoons|teaspoons)\s+[a-zA-Z\s]+$'
     pattern = r'^\d+(\/\d{1})?\s+(kg|gr|ml|l|buah|butir|lembar|bungkus|ikat|sdm|sdt)\s+[a-zA-Z0-9\s]+$'
     return re.match(pattern, ingredient) is not None
-
 def main():
     # Information for users
     print("\nHalo kontributor Yummii !")
@@ -35,7 +33,4 @@ def main():
     print("\nBahan : ")
     for ing in ingredients:
         print(f"- {ing}")
-
-
 main()
-

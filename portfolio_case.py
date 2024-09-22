@@ -1,18 +1,18 @@
 import re
+
 def validasi(ingredient):
-    # pattern = r'^\d+(\s\/\s\d+)?\s*(kg|g|ml|l|cups|tablespoons|teaspoons)\s+[a-zA-Z\s]+$'
-    pattern = r'^\d+(\/\d{1})?\s+(kg|gr|ml|l|buah|butir|lembar|bungkus|ikat|sdm|sdt)\s+[a-zA-Z0-9\s]+$'
+    pattern = r'^\d+(\/\d{1})?\s+(kg|gr|ml|l|buah|butir|lembar|bungkus|ikat|batang|sdm|sdt)\s+[a-zA-Z0-9\s]+$'
     return re.match(pattern, ingredient) is not None
+
 def main():
     # Information for users
     print("\nHalo kontributor Yummii !")
-    print("\Silahkan masukkan nama resep dan bahan-bahan Anda")
-    print("\nBahan harus mengikuti format ini:")
-    print("\n  - contoh penulisan (contoh : '1 kg tepung terigu', '1/2 bungkus mie instant')\n")
-    print("  - satuan yang diterima : kg, gr, ml, l, buah, butir, lembar, bungkus, ikat, sdm, sdt\n")
+    print("\nBahan harus diinput sesuai ketentuan berikut ini :")
+    print("\n  - contoh penulisan (1 kg tepung terigu, 1/2 bungkus mie instant)\n")
+    print("  - satuan yang diterima : kg, gr, ml, l, buah, butir, lembar, bungkus, ikat, batang, sdm, sdt\n")
     
-    recipe_name = input("\nMasukkan nama resep Anda :  ")
-    print(f"\nNama resep: {recipe_name}\n")
+    recipe_name = input("\nMasukkan Judul Resep Anda :  ")
+    print(f"\nJudul resep: {recipe_name}\n")
     
     ingredients = []
     
@@ -33,4 +33,7 @@ def main():
     print("\nBahan : ")
     for ing in ingredients:
         print(f"- {ing}")
+
+
 main()
+
